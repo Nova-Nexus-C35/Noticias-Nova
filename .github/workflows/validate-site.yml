@@ -1,0 +1,29 @@
+name: Validate Noticias Nova
+on:
+  push:
+    branches: [main]
+    paths: ["**/*.html", "**/*.css", "**/*.js", "**/*.json", ".github/workflows/validate-site.yml"]
+  pull_request:
+    branches: [main]
+    paths: ["**/*.html", "**/*.css", "**/*.js", "**/*.json", ".github/workflows/validate-site.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate JSON files
+        run: |
+          find . -type f -name '*.json' -not -path './.git/*' -print0 |
+          while IFS= read -r -d '' file; do node -e "JSON.parse(require('fs').readFileSync(process.argv[1], 'utf8'))" "$file"; done
+      - name: Validate JavaScript syntax
+        run: |
+          find . -type f -name '*.js' -not -path './.git/*' -print0 |
+          while IFS= read -r -d '' file; do node --check "$file"; done
+      - name: Verify publication entry point
+        run: test -s index.html
