@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Noticias Nova: información de Cuba y del mundo con contexto y fuentes verificables.">
+  <meta name="theme-color" content="#102b43">
+  <title>Noticias Nova | Cuba y el mundo</title>
+  <style>
+    :root{color-scheme:dark;--bg:#081827;--panel:#102b43;--text:#f2f6fa;--muted:#b8c6d3;--green:#21a66b;--red:#d94a4a;--blue:#3e8ed0;--silver:#c5d0da}
+    *{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#081827,#102b43);color:var(--text);font:16px/1.6 system-ui,sans-serif}
+    header{padding:2rem max(1rem,calc((100% - 1000px)/2));border-bottom:1px solid #ffffff22}
+    .brand{display:flex;align-items:center;gap:1rem}.brand img{width:76px;height:76px;object-fit:contain}
+    h1{margin:0;font-size:clamp(1.8rem,5vw,3rem)}.accent{color:var(--silver)}.tagline{color:var(--muted);margin:.4rem 0 0}
+    main{max-width:1000px;margin:2rem auto;padding:0 1rem}.panel{background:#102b43cc;border:1px solid #ffffff20;border-radius:18px;padding:1.5rem}
+    .stripe{height:5px;border-radius:5px;background:linear-gradient(90deg,var(--green) 0 25%,var(--red) 25% 50%,var(--blue) 50% 75%,var(--silver) 75%)}
+    h2{margin-top:0}.muted{color:var(--muted)}footer{max-width:1000px;margin:2rem auto;padding:1rem;color:var(--muted);font-size:.9rem}
+    a{color:#9ed1ff}
+  </style>
+</head>
+<body>
+  <header><div class="brand">
+    <img src="assets/branding/noticias-nova-icon.png" alt="Símbolo de Noticias Nova">
+    <div><h1>Noticias <span class="accent">Nova</span></h1><p class="tagline">Cuba primero. El mundo, con contexto.</p></div>
+  </div></header>
+  <main>
+    <div class="stripe" aria-hidden="true"></div>
+    <section class="panel" aria-labelledby="about">
+      <h2 id="about">Información con contexto y fuentes</h2>
+      <p>Noticias Nova es un espacio informativo dedicado a Cuba y a la actualidad internacional. Nuestro criterio editorial combina medios independientes y fuentes institucionales, diferenciando hechos confirmados, declaraciones y análisis.</p>
+      <p class="muted">La publicación de noticias se habilitará cuando cada contenido incluya su fuente, fecha, autoría y verificación editorial. No se muestran titulares ficticios ni noticias sin comprobar.</p>
+    </section>
+  </main>
+  <footer><p>Noticias Nova · <a href="docs/CRITERIO_DE_RECURSOS.md">Criterios editoriales y de fuentes</a></p></footer>
+</body>
+</html>
